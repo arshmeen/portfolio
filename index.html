@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arshmeen Kaur | Full Stack Developer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">AK.</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="resume.pdf" class="resume-button" target="_blank">Resume</a>
+        </div>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="social-links">
+        <a href="https://github.com/arshmeen" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/arshmeen-kaur-60a468153/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://codepen.io" target="_blank" rel="noopener noreferrer"><i class="fab fa-codepen"></i></a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <div class="email-link">
+        <a href="mailto:arshmeenk19@gmail.com">arshmeenk19@gmail.com</a>
+    </div>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <p class="hero-intro fade-in delay-1">Hi, my name is</p>
+                <h1 class="glitch-text fade-in delay-2">Arshmeen Kaur.</h1>
+                <h2 class="hero-subtitle fade-in delay-3">I build things for the web.</h2>
+                <p class="fade-in delay-4">I'm a Full Stack Developer specializing in building exceptional digital experiences. Currently pursuing Full Stack Software Development at Lambton College and focusing on building accessible, human-centered products.</p>
+                <div class="cta-buttons fade-in delay-5">
+                    <a href="#contact" class="primary-btn">Get In Touch</a>
+                    <a href="#projects" class="secondary-btn">Check Out My Work</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Arshmeen, a Full Stack Developer with a background in Electronics and Communication from Thapar Institute of Engineering and Technology. My journey in tech has been driven by a passion for creating innovative solutions and meaningful user experiences.</p>
+                    <p>At Eaton Corporation, I worked on Python-based tools using Natural Language Processing techniques, and at CipherSquare Technologies, I implemented AI models to improve data extraction accuracy by 30%.</p>
+                    <p>My focus is on creating efficient, user-friendly applications that solve real-world problems. I enjoy the challenge of optimizing performance and ensuring code quality.</p>
+                    
+                    <p>Here are some technologies I've been working with recently:</p>
+                    <ul class="skills-list">
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C/C++</li>
+                        <li>JavaScript</li>
+                        <li>HTML & CSS</li>
+                        <li>SQL</li>
+                        <li>Power BI</li>
+                        <li>Data Structures</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="images/profile.jpg" alt="Arshmeen Kaur" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2 class="section-title">Where I've Worked</h2>
+            <div class="experience-container">
+                <div class="experience-tabs">
+                    <button class="tab-button active" data-company="cipher">CipherSquare</button>
+                    <button class="tab-button" data-company="eaton">Eaton</button>
+                </div>
+                <div class="experience-content">
+                    <div class="experience-item active" id="cipher">
+                        <h3>Software Developer <span class="company">@ CipherSquare Technologies</span></h3>
+                        <p class="date">March 2022 - Present</p>
+                        <ul>
+                            <li>Incorporated Python to integrate AI concepts, particularly Natural Language Processing (NLP) into real-time scenarios</li>
+                            <li>Enhanced NLP models to improve text analysis accuracy by 20%, implementing user interaction features</li>
+                            <li>Implemented AI models, improved data extraction accuracy by 30%, optimizing information retrieval across applications</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item" id="eaton">
+                        <h3>Data Science Intern <span class="company">@ Eaton Corporation</span></h3>
+                        <p class="date">July 2020 - January 2022</p>
+                        <ul>
+                            <li>Developed a Python-based search tool with NLP techniques, leveraging Named Entity Recognition (NER) to extract data from PDF and Excel files</li>
+                            <li>Engineered an Automatic Report Generation tool using Python, integrating PyQt5 and Tkinter for a user-friendly interface</li>
+                            <li>Streamlined Excel and Word interactions by incorporating openpyxl, docx, regex libraries, and Word VBA Macros, improving efficiency by 40%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">Some Things I've Built</h2>
+            
+            <div class="featured-projects">
+                <div class="featured-project">
+                    <div class="project-content">
+                        <p class="project-overline">Featured Project</p>
+                        <h3 class="project-title">Spiro - Sudoku Solver</h3>
+                        <div class="project-description">
+                            <p>A lightning-fast Sudoku solver using a custom Backtracking Algorithm. The project can solve complex 81-cell puzzles in under 2 seconds with exceptional accuracy, tested on over 1,000+ puzzles of varying difficulties.</p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>Python</li>
+                            <li>Algorithms</li>
+                            <li>Backtracking</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/arshmeen/Spiro" target="_blank" rel="noopener noreferrer" title="GitHub Link"><i class="fab fa-github"></i></a>
+                            <a href="https://spiro-tnpm.onrender.com" target="_blank" rel="noopener noreferrer" title="External Link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <img src="images/sudoku.png" alt="Sudoku Solver Project" />
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="featured-project">
+                    <div class="project-content right">
+                        <p class="project-overline">Featured Project</p>
+                        <h3 class="project-title">TOASTY Haven</h3>
+                        <div class="project-description">
+                            <p>Designed and developed a fully responsive website for Toasters using HTML, CSS, and JavaScript, featuring an engaging user interface with interactive elements. Ensured optimal performance, seamless navigation, and cross-browser compatibility to enhance the user experience.</p>
+                        </div>
+                        <ul class="project-tech-list right">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <div class="project-links right">
+                            <a href="https://github.com/arshmeen/Toasters" target="_blank" rel="noopener noreferrer" title="GitHub Link"><i class="fab fa-github"></i></a>
+                            <a href="https://toasty-haven.netlify.app/" target="_blank" rel="noopener noreferrer" title="External Link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-image left">
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <img src="images/toasty-haven.jpeg" alt="Toasty-Haven" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">What's Next?</h2>
+            <h3 class="contact-title">Get In Touch</h3>
+            <p>I'm currently looking for new opportunities. Whether you have a question, a project in mind, or just want to say hi, I'll try my best to get back to you!</p>
+            <div class="contact-links">
+                <a href="mailto:arshmeenk19@gmail.com" class="contact-button">
+                    <i class="fas fa-envelope"></i> Say Hello
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- <footer>
+        <p>Designed & Built by Arshmeen Kaur</p>
+        <p>Inspired by <a href="https://brittanychiang.com/" target="_blank" rel="noopener noreferrer">Brittany Chiang</a></p>
+    </footer> -->
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

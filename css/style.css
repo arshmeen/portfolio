@@ -78,12 +78,12 @@ body {
     text-decoration: none;
     margin-left: 30px;
     font-size: 0.9rem;
-    counter-increment: item;
+    /* counter-increment: item; */
     transition: var(--transition);
 }
 
 .nav-links a::before {
-    content: "0" counter(item) ".";
+    /* content: "0" counter(item) "."; */
     color: var(--accent);
     margin-right: 5px;
     font-family: var(--font-mono);

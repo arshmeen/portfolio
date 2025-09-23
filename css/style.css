@@ -339,7 +339,7 @@ body {
 
 .skills-list {
     display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
+    grid-template-columns: repeat(3, minmax(140px, 200px));
     gap: 15px;
     list-style: none;
     margin-top: 20px;
@@ -1270,4 +1270,140 @@ footer a:hover {
             opacity: 1;
         }
     }
+} 
+
+/* Remove skills carousel styles if present */
+.skills-carousel, .skills-track, .skills-nav, .skill-card { display: initial; }
+
+/* Categorized skills static grid */
+.skills-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .skills-categories { grid-template-columns: 1fr; }
+}
+
+.skills-category h4 {
+    margin: 0 0 12px;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Set skills list to 5 columns on desktop */
+.skills-category .skills-list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 1200px) {
+    .skills-category .skills-list { grid-template-columns: repeat(4, minmax(120px, 1fr)); }
+}
+
+@media (max-width: 900px) {
+    .skills-category .skills-list { grid-template-columns: repeat(3, minmax(100px, 1fr)); }
+}
+
+@media (max-width: 600px) {
+    .skills-category .skills-list { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+}
+
+.skills-category .skills-list li {
+    padding: 12px 14px 12px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid rgba(122, 162, 247, 0.3);
+    border-radius: 6px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.skills-category .skills-list li:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    color: var(--text-primary);
+    background: rgba(122, 162, 247, 0.08);
+} 
+
+/* Skills Tabs */
+.skills-tabs { margin-top: 10px; }
+
+.skills-tab-buttons {
+    display: flex;
+    gap: 8px;
+    border-left: 2px solid var(--text-secondary);
+}
+
+.skills-tab-button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    padding: 12px 18px;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-mono);
+}
+
+.skills-tab-button.active {
+    color: var(--accent);
+    background-color: rgba(100, 255, 218, 0.1);
+    border-left: 2px solid var(--accent);
+    margin-left: -2px;
+}
+
+.skills-tab-content { margin-top: 16px; }
+
+.skills-panel { display: none; }
+.skills-panel.active { display: block; }
+
+/* Keep 5-column boxes inside panels */
+.skills-panel .skills-list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 1200px) {
+    .skills-panel .skills-list { grid-template-columns: repeat(4, minmax(120px, 1fr)); }
+}
+
+@media (max-width: 900px) {
+    .skills-tab-buttons { border-left: none; border-bottom: 2px solid var(--text-secondary); overflow-x: auto; }
+    .skills-tab-button.active { border-left: none; border-bottom: 2px solid var(--accent); margin-left: 0; margin-bottom: -2px; }
+    .skills-panel .skills-list { grid-template-columns: repeat(3, minmax(100px, 1fr)); }
+}
+
+@media (max-width: 600px) {
+    .skills-panel .skills-list { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+}
+
+/* Reuse skill box styles */
+.skills-panel .skills-list li {
+    padding: 12px 14px 12px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid rgba(122, 162, 247, 0.3);
+    border-radius: 6px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.skills-panel .skills-list li:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    color: var(--text-primary);
+    background: rgba(122, 162, 247, 0.08);
 } 

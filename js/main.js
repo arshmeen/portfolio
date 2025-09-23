@@ -60,6 +60,23 @@ tabButtons.forEach(button => {
     });
 });
 
+// Skills tabs toggle
+const skillsTabButtons = document.querySelectorAll('.skills-tab-button');
+const skillsPanels = document.querySelectorAll('.skills-panel');
+
+skillsTabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-skill');
+        // clear active
+        skillsTabButtons.forEach(b => b.classList.remove('active'));
+        skillsPanels.forEach(p => p.classList.remove('active'));
+        // set active
+        btn.classList.add('active');
+        const panel = document.getElementById(key);
+        if (panel) panel.classList.add('active');
+    });
+});
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -341,3 +358,59 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 }); 
+
+// Skills carousel controls and drag-to-scroll
+(function initSkillsCarousel(){
+    const track = document.querySelector('.skills-track');
+    const prev = document.querySelector('.skills-nav.prev');
+    const next = document.querySelector('.skills-nav.next');
+    if (!track || !prev || !next) return;
+
+    const cardWidth = () => track.querySelector('.skill-card')?.getBoundingClientRect().width || 300;
+    const scrollByOne = (dir) => {
+        track.scrollBy({ left: dir * (cardWidth() + 16), behavior: 'smooth' });
+    };
+
+    prev.addEventListener('click', () => scrollByOne(-1));
+    next.addEventListener('click', () => scrollByOne(1));
+
+    // Drag to scroll (desktop) / swipe (touch)
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    const onDown = (e) => {
+        isDown = true;
+        track.classList.add('dragging');
+        startX = (e.pageX || e.touches?.[0].pageX) - track.offsetLeft;
+        scrollLeft = track.scrollLeft;
+    };
+
+    const onMove = (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = (e.pageX || e.touches?.[0].pageX) - track.offsetLeft;
+        const walk = (x - startX) * 1.2;
+        track.scrollLeft = scrollLeft - walk;
+    };
+
+    const onUp = () => {
+        isDown = false;
+        track.classList.remove('dragging');
+    };
+
+    track.addEventListener('mousedown', onDown);
+    track.addEventListener('mouseleave', onUp);
+    track.addEventListener('mouseup', onUp);
+    track.addEventListener('mousemove', onMove);
+
+    track.addEventListener('touchstart', onDown, { passive: true });
+    track.addEventListener('touchmove', onMove, { passive: false });
+    track.addEventListener('touchend', onUp);
+
+    // Keyboard arrows
+    track.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') scrollByOne(1);
+        if (e.key === 'ArrowLeft') scrollByOne(-1);
+    });
+})(); 

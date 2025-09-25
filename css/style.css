@@ -1298,7 +1298,7 @@ footer a:hover {
 /* Set skills list to 5 columns on desktop */
 .skills-category .skills-list {
     display: grid;
-    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    grid-template-columns: repeat(7, minmax(120px, 1fr));
     gap: 12px;
     list-style: none;
     margin: 0;
@@ -1366,10 +1366,10 @@ footer a:hover {
 .skills-panel { display: none; }
 .skills-panel.active { display: block; }
 
-/* Keep 5-column boxes inside panels */
+/* Keep 7-column boxes inside panels */
 .skills-panel .skills-list {
     display: grid;
-    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    grid-template-columns: repeat(7, minmax(120px, 1fr));
     gap: 12px;
     list-style: none;
     margin: 0;

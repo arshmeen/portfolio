@@ -379,10 +379,11 @@ body {
     opacity: 1;
 }
 
+/* Profile image frame - responsive size, no fixed height */
 .image-frame {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    max-width: 100%;
     border-radius: 4px;
 }
 
@@ -405,19 +406,27 @@ body {
     border-color: var(--accent);
 }
 
+/* Profile image - show full picture without crop */
 .image-frame img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
     border-radius: 4px;
-    filter: grayscale(100%) contrast(1);
-    mix-blend-mode: multiply;
+    filter: grayscale(100%) contrast(1.05);
+    mix-blend-mode: normal;
     transition: var(--transition);
 }
 
+/* Subtle hover lift without changing color */
 .image-frame:hover img {
-    filter: none;
-    mix-blend-mode: normal;
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .image-frame {
+        margin: 30px auto 0;
+    }
 }
 
 /* Experience Section */
@@ -1366,28 +1375,37 @@ footer a:hover {
 .skills-panel { display: none; }
 .skills-panel.active { display: block; }
 
-/* Keep 7-column boxes inside panels */
+/* Make skills grids auto-fit so last row fills */
 .skills-panel .skills-list {
     display: grid;
-    grid-template-columns: repeat(7, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 12px;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
+/* If the non-tabbed skills list is used anywhere, keep it consistent */
+.skills-category .skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove fixed column overrides on smaller screens to let auto-fit handle it */
 @media (max-width: 1200px) {
-    .skills-panel .skills-list { grid-template-columns: repeat(4, minmax(120px, 1fr)); }
+    .skills-panel .skills-list { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
 }
 
 @media (max-width: 900px) {
-    .skills-tab-buttons { border-left: none; border-bottom: 2px solid var(--text-secondary); overflow-x: auto; }
-    .skills-tab-button.active { border-left: none; border-bottom: 2px solid var(--accent); margin-left: 0; margin-bottom: -2px; }
-    .skills-panel .skills-list { grid-template-columns: repeat(3, minmax(100px, 1fr)); }
+    .skills-panel .skills-list { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
 }
 
 @media (max-width: 600px) {
-    .skills-panel .skills-list { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+    .skills-panel .skills-list { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
 }
 
 /* Reuse skill box styles */

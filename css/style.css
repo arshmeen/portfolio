@@ -418,9 +418,10 @@ body {
     transition: var(--transition);
 }
 
-/* Subtle hover lift without changing color */
+/* On hover: lift slightly and restore full color */
 .image-frame:hover img {
     transform: scale(1.02);
+    filter: none;
 }
 
 @media (max-width: 768px) {
